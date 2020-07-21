@@ -1,0 +1,483 @@
+/* https://www.youtube.com/watch?v=h7KjDZLeSRY&list=PLjwdMgw5TTLVjTZQocrMwKicV5wsZlRpj&index=20 */
+
+
+:root {
+    --primary: #0488CA;
+}
+
+.theme_green {
+    --primary: green;
+}
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+p {
+    margin: 1em 0;
+}
+
+
+/* ========================================= */
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    background: #F1F1F1;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    color: rgba(0, 0, 0, .6);
+    margin: 0;
+    line-height: 1.3;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.topbar {
+    /* background: #2C3E50; */
+    background: #0488CA;
+    background: var(--primary, #000);
+    color: #FFF;
+}
+
+.btn {
+    background: #0488CA;
+    background: var(--primary, #000);
+    color: #FFF;
+    padding: 7px 10px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+/* .theme_green {
+    --primary: green;
+} */
+
+.topbar__logo {
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    padding: 11px 0;
+}
+
+.topbar__nav {
+    text-align: center;
+    padding-bottom: 16px;
+    line-height: 2;
+}
+
+.topbar__nav a {
+    display: inline-block;
+    margin: 0 12px;
+    color: rgba(255, 255, 255, .67);
+    transition: color .3s;
+}
+
+.topbar__nav a:hover,
+.topbar__nav a.active {
+    color: #FFF;
+}
+
+.container {
+    padding: 0 15px;
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.site {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.main {
+    margin-bottom: 20px;
+}
+
+.profil {
+    display: none;
+}
+
+.sidebar {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+    display: block;
+    width: 50%;
+    padding: 0.6em 0;
+    transition: .3s;
+    border: solid 1px transparent;
+    padding-left: 10px;
+}
+
+.sidebar a::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 14px;
+    vertical-align: middle;
+    margin-top: -3px;
+    margin-right: 20px;
+    opacity: .67;
+    background: url(img/home.png) center center / contain no-repeat;
+    transition: opacity .3s;
+}
+
+.sidebar .sidebar__message::before {
+    background-image: url(img/message.png);
+}
+
+.sidebar .sidebar__event::before {
+    background-image: url(img/event.png);
+}
+
+.sidebar .sidebar__group::before {
+    background-image: url(img/group.png);
+}
+
+
+.sidebar a:hover,
+.sidebar a.active {
+    color: #000;
+    border: solid 1px #DBDBDB;
+    border-radius: 3px;
+    background: #FFF;
+    font-weight: bold;
+}
+
+.sidebar a:hover::before,
+.sidebar a.active::before {
+    opacity: 1;
+}
+
+.card {
+    border: solid 1px #DBDBDB;
+    background: #FFF;
+    border-radius: 3px;
+    margin-bottom: 15px;
+}
+
+.card:last-child {
+    margin-bottom: 0;
+}
+
+.card__header {
+    padding: 10px;
+    position: relative;
+}
+
+.card__header__avatar {
+    padding-left: 65px;
+}
+
+.card__avatar {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+}
+
+.card__title {
+    font-weight: bold;
+    color: #000;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.card__date {
+    color: rgba(0, 0, 0, .38);
+    font-size: 12px;
+}
+
+.card__body {
+    padding: 0 10px 20px 10px;
+}
+
+.card__body a {
+    text-decoration: underline;
+}
+
+.card__body .fullwidth {
+    width: calc(100% + 20px);
+    display: block;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.card__body p:first-child {
+    margin-top: 0;
+}
+
+.card__body p:last-child {
+    margin-bottom: 0;
+}
+
+.card__footer {
+    border-top: solid 1px #DBDBDB;
+    background: #FBFBFB;
+    display: flex;
+    padding: 10px;
+    font-size: 12px;
+    color: #DBDBDB;
+}
+
+.card__footer a:hover {
+    text-decoration: underline;
+}
+
+.card__like::before,
+.card__comments::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+    background: url(img/like.png) center center / 20px 18px no-repeat;
+}
+
+.card__comments {
+    margin-left: auto;
+}
+
+.card__comments::before {
+    background: url(img/comment.png) center center / 18px 17px no-repeat;
+}
+
+.sidebar__title {
+    margin-top: 30px;
+    margin-bottom: 18px;
+    color: #000;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.sidebar__title::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    margin-top: 4px;
+    background: #000;
+}
+
+.friend {
+    margin: 14px 0;
+    display: flex;
+}
+
+.friend__body {
+    display: flex;
+    flex-direction: column;
+}
+
+.friend__avatar {
+    width: 73px;
+    height: 73px;
+    flex: none;
+    margin-right: 10px;
+}
+
+.friend__name {
+    display: block;
+    font-weight: bold;
+    color: #000;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+* .friend__connexion {
+    color: rgba(0, 0, 0, .38);
+    font-size: 12px;
+}
+
+.friend__add {
+    font-size: 12px;
+    color: #000;
+    margin-top: auto;
+    margin-bottom: 3px;
+}
+
+.friend__add::before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 13px;
+    transform: translateY(-1px);
+    background: center center / 18px 13px no-repeat url(img/user_add.svg);
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+
+
+
+
+@media only screen and (min-width: 520px) {
+    .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 64px;
+        padding: 0 25px;
+    }
+
+    .topbar__logo,
+    .topbar__nav {
+        padding: 0;
+    }
+
+    .topbar__nav a {
+        margin: 0 20px;
+    }
+}
+
+@media only screen and (min-width: 950px) {
+    .site {
+        display: flex;
+    }
+
+    .profil {
+        display: block;
+    }
+
+    .sidebar {
+        display: block;
+        flex: none;
+        width: 180px;
+    }
+
+    .sidebar a {
+        width: 100%;
+    }
+
+    .main {
+        margin-left: 30px;
+        margin-right: 30px;
+        width: 100%;
+    }
+
+    .aside {
+        flex: none;
+        width: 310px;
+    }
+}
